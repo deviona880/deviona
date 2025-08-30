@@ -16,7 +16,7 @@ export default function AdminUsers() {
 
   // Load users
   useEffect(() => {
-    fetch("http://localhost:5000/auth/users", {
+    fetch("https://deviona-backend.onrender.com/auth/users", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then((res) => res.json())
@@ -27,7 +27,7 @@ export default function AdminUsers() {
   const handleAddUser = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:5000/auth/register", {
+      const response = await fetch("https://deviona-backend.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function AdminUsers() {
     e.preventDefault()
     if (!editingUser) return
 
-    const response = await fetch(`http://localhost:5000/auth/users/${editingUser._id}`, {
+    const response = await fetch(`https://deviona-backend.onrender.com/auth/users/${editingUser._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +76,7 @@ export default function AdminUsers() {
   // Toggle active status
   const handleToggleActive = async (userId: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/auth/users/${userId}/toggle`, {
+      const response = await fetch(`https://deviona-backend.onrender.com/auth/users/${userId}/toggle`, {
         method: "PATCH",
         headers: { 
           Authorization: `Bearer ${localStorage.getItem("token")}`,
