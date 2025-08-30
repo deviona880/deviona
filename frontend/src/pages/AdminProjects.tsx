@@ -76,7 +76,7 @@ const AdminProjects: React.FC = () => {
   const loadProjects = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:5000/projects", {
+      const response = await fetch("https://deviona-backend.onrender.com/projects", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ const AdminProjects: React.FC = () => {
       onConfirm: async () => {
         try {
           const token = localStorage.getItem("token")
-          const response = await fetch(`http://localhost:5000/projects/${projectId}/status`, {
+          const response = await fetch(`https://deviona-backend.onrender.com/projects/${projectId}/status`, {
             method: "PATCH",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -149,8 +149,8 @@ const AdminProjects: React.FC = () => {
       const token = localStorage.getItem("token")
       const method = editingProject ? "PUT" : "POST"
       const url = editingProject 
-        ? `http://localhost:5000/projects/${editingProject._id}`
-        : "http://localhost:5000/projects"
+        ? `https://deviona-backend.onrender.com/projects/${editingProject._id}`
+        : "https://deviona-backend.onrender.com/projects"
 
       const response = await fetch(url, {
         method,
@@ -203,7 +203,7 @@ const AdminProjects: React.FC = () => {
       onConfirm: async () => {
         try {
           const token = localStorage.getItem("token")
-          const response = await fetch(`http://localhost:5000/projects/${projectId}`, {
+          const response = await fetch(`https://deviona-backend.onrender.com/projects/${projectId}`, {
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -229,7 +229,7 @@ const AdminProjects: React.FC = () => {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:5000/attachments", {
+      const response = await fetch("https://deviona-backend.onrender.com/attachments", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -280,7 +280,7 @@ const AdminProjects: React.FC = () => {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`http://localhost:5000/attachments/${attachmentId}/${status === "in-progress" ? "start" : "finish"}`, {
+      const response = await fetch(`https://deviona-backend.onrender.com/attachments/${attachmentId}/${status === "in-progress" ? "start" : "finish"}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
