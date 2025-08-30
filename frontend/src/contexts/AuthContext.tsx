@@ -36,7 +36,7 @@ interface AuthProviderProps {
   children: ReactNode
 }
 
-const API_BASE_URL = "http://localhost:5000" // Update this to match your backend server port
+const API_BASE_URL = "https://deviona-backend.onrender.com" // Update this to match your backend server port
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
