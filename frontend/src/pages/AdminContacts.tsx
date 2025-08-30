@@ -16,7 +16,6 @@ interface Contact {
 }
 
 const AdminContacts: React.FC = () => {
-  const { user } = useAuth()
   const [contacts, setContacts] = useState<Contact[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
