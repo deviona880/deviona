@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
-import { useAuth } from "../contexts/AuthContext"
+//import { useAuth } from "../contexts/AuthContext"
 
 interface Contact {
   _id: string
@@ -16,13 +16,14 @@ interface Contact {
 }
 
 const AdminContacts: React.FC = () => {
+  //const { user } = useAuth()
   const [contacts, setContacts] = useState<Contact[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "read" | "unread">("all")
 
-  const API_BASE_URL = "https://deviona-backend.onrender.com"
+  const API_BASE_URL = "http://localhost:5000"
 
   useEffect(() => {
     loadContacts()
