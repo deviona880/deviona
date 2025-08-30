@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require("../middleware/authMiddleware");
 const User = require("../models/User");
 const Project = require("../models/Project");
-const Contact = require("../models/contact"); // Fixed casing to match existing import
+const Contact = require("../models/Contact"); // Fixed casing to match existing import
 
 // Get dashboard stats
 router.get("/dashboard", auth, async (req, res) => {
