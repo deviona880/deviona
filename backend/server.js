@@ -4,12 +4,16 @@ const cros= require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cros());
+app.use(cors({
+  origin: "https://deviona-frontend.onrender.com", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // if you use cookies or auth headers
+}));
 app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("✅ MongoDB connecté"))
+    .then(() => console.log("✅ MongoDB connecté",process.env.MONGO_URI))
     .catch(err => console.error("❌ Erreur MongoDB :", err));
 
 
