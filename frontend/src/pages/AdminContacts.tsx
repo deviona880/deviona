@@ -23,7 +23,7 @@ const AdminContacts: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "read" | "unread">("all")
 
-  const API_BASE_URL = "http://localhost:5000"
+  const API_BASE_URL = "https://deviona-backend.onrender.com"
 
   useEffect(() => {
     loadContacts()
