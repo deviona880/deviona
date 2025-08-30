@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Contact = require("../models/contact")
+const Contact = require("../models/Contact")
 const nodemailer = require("nodemailer")
 
 // Configure email transporter with better error handling
